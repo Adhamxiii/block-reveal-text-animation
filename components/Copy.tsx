@@ -25,9 +25,9 @@ const Copy = ({
   duration = 0.75,
 }: CopyProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const spliteRef = useRef([]);
-  const lines = useRef([]);
-  const blocks = useRef([]);
+  const spliteRef = useRef<SplitText[]>([]);
+  const lines = useRef<Element[]>([]);
+  const blocks = useRef<HTMLDivElement[]>([]);
 
   useGSAP(
     () => {
@@ -37,7 +37,7 @@ const Copy = ({
       lines.current = [];
       blocks.current = [];
 
-      let elements = [];
+      let elements: Element[] = [];
 
       if (containerRef.current.hasAttribute("data-copy-wrapper")) {
         elements = Array.from(containerRef.current.children);
@@ -73,7 +73,11 @@ const Copy = ({
       gsap.set(lines.current, { opacity: 0 });
       gsap.set(blocks.current, { scaleX: 0, transformOrigin: "left center" });
 
-      const createBlockRevealAnimation = (block, line, index) => {
+      const createBlockRevealAnimation = (
+        block: HTMLDivElement,
+        line: Element,
+        index: number
+      ) => {
         const tl = gsap.timeline({
           delay: delay + index * stagger,
         });
