@@ -64,9 +64,7 @@ Set `animateOnScroll={false}` to play the animation immediately on mount instead
 
 ## Live Demo
 
-Coming soon — deploy the project and replace this section with your live URL.
-
-<!-- Example: [View Live Demo](https://your-demo-url.vercel.app) -->
+[View Live Demo](https://block-reveal-text-animation-psi.vercel.app/)
 
 ## Contributing
 
