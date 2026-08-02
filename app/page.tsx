@@ -1,65 +1,86 @@
-import Image from "next/image";
+import Copy from "@/components/Copy";
+import ReactLenis from "lenis/react";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      <ReactLenis root />
+      <nav>
+        <p>Static House</p>
+        <p>Menu</p>
+      </nav>
+
+      <section className="intro">
+        <div className="section-bg">
+          <img src="/img_1.jpg" alt="intro-bg" />
+        </div>
+
+        <Copy blockColor="#fe0100">
+          <h1>
+            Framed in tungsten and shadows, every shot holds its own deliberate
+            tension.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        </Copy>
+      </section>
+
+      <section className="about">
+        <Copy>
+          <p>
+            This is cinematography at its raw form with pracitical lamps, soft
+            falloffm and the presence of grain that fills each corner of the
+            frame. Every room functions as a set and every posture becomes a
+            composition. Light moves across furniture and faces, shaping scenes
+            with a natural sense of depth.
           </p>
+        </Copy>
+      </section>
+
+      <section className="banner-img">
+        <div className="section-bg">
+          <img src="/img_2.jpg" alt="banner-img" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="services">
+        <Copy blockColor="#fe0100">
+          <h1>
+            Still frames with bold contrast and lighting choices that embrace
+            imperfection.
+          </h1>
+        </Copy>
+      </section>
+
+      <section className="banner-img">
+        <div className="section-bg">
+          <img src="/img_3.jpg" alt="banner-img" />
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="cta">
+        <Copy>
+          <p>
+            the camera settles into long takes and patient movement. Colors stay
+            unrefined and shadows turn into texture. The image waits for action
+            instead of chasing it. Every frame forms a clear visual language
+            built through restraint.
+          </p>
+        </Copy>
+      </section>
+
+      <section className="outro">
+        <div className="section-bg">
+          <img src="/img_4.png" alt="outro-bg" />
+        </div>
+
+        <Copy blockColor="#fe0100">
+          <h1>
+            Cinematography thrives in the details from the grain to the falloff
+            to glow.
+          </h1>
+        </Copy>
+      </section>
+    </>
   );
-}
+};
+
+export default Home;

@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Block Reveal Text Animation
 
-## Getting Started
+A scroll-triggered text animation where a colored block sweeps across each line, then peels away to reveal the copy underneath.
 
-First, run the development server:
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Live Demo](#live-demo)
+- [Contributing](#contributing)
+- [Contact Me](#contact-me)
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Adhamxiii/block-reveal-text-animation.git
+cd block-reveal-text-animation
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Wrap any heading or paragraph with the `Copy` component to apply the block reveal animation:
 
-## Learn More
+```tsx
+import Copy from "@/components/Copy";
 
-To learn more about Next.js, take a look at the following resources:
+<Copy blockColor="#fe0100">
+  <h1>Your headline goes here.</h1>
+</Copy>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<Copy>
+  <p>Body copy animates on scroll by default.</p>
+</Copy>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Props
 
-## Deploy on Vercel
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `ReactNode` | — | Text content to animate (required) |
+| `animateOnScroll` | `boolean` | `true` | Play when the element enters the viewport |
+| `delay` | `number` | `0` | Delay before the animation starts (seconds) |
+| `blockColor` | `string` | `"#000"` | Color of the reveal block |
+| `stagger` | `number` | `0.15` | Delay between each line (seconds) |
+| `duration` | `number` | `0.75` | Duration of each block sweep (seconds) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Set `animateOnScroll={false}` to play the animation immediately on mount instead of on scroll.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Live Demo
+
+Coming soon — deploy the project and replace this section with your live URL.
+
+<!-- Example: [View Live Demo](https://your-demo-url.vercel.app) -->
+
+## Contributing
+
+Contributions are welcome. To contribute:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m "Add your feature"`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a pull request
+
+Please keep PRs focused and describe what changed and why.
+
+## Contact Me
+
+- **Email:** [adhamxiii22@gmail.com](mailto:adhamxiii22@gmail.com)
+- **GitHub:** [@Adhamxiii](https://github.com/Adhamxiii)
+- **LinkedIn:** [Adham Nasser](https://linkedin.com/in/adhamnasser)
